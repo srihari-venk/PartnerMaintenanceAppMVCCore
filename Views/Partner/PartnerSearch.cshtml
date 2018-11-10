@@ -1,0 +1,48 @@
+@{
+    ViewData["Title"] = "Search Partner";
+}
+@model List<Partner>
+<h4>Search Partner</h4>
+  <div class="container" >
+        <form class="form-inline">
+        <div class="form-group">
+    <label for="PartnerName">Partner Name</label>
+    <input type="text" class="form-control" id="PartnerName">
+  </div>
+  <div class="form-group">
+    <label for="qID">Q-ID:</label>
+    <input type="text" class="form-control" id="qID">
+  </div>
+ <div class="form-group">
+    <label for="email">E-Mail:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>  
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Partner Name</th>
+        <th>E-mail</th>
+        <th>Q-ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model )
+      {
+      <tr>
+        <td scope="row">@item.Name</td>
+        <td>@item.Email</td>
+        <td>@item.QID</td>
+        <td>
+                    <a asp-controller="Partner" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-controller="Partner" asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-controller="Partner" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+      </tr>
+      }
+      </tr>
+    </tbody>
+  </table>  
+</div>
