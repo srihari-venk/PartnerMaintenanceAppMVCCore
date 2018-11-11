@@ -4,19 +4,42 @@
 </div>
 <div class="container">
 <form class="form-horizontal">
-        <div class="form-group">
-    <label for="PartnerName">Partner Name</label>
-    <input class="form-control" id="PartnerName" value=@Model.Name>
-    @Model.Name
+  <div class="row">
+    <div class="col-md-4">
+    <div class="form-group">
+      <label for="PartnerName">Partner Name</label>
+      <input type="text" class="form-control" id="PartnerName" value="@Model.Name">
+    </div>
+    <div class="form-group">
+      <label for="qID">Q-ID:</label>
+      <input type="text" class="form-control" id="qID" value="@Model.QID" style="width:50%;"> 
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail:</label>
+      <input type="email" class="form-control" id="email" value="@Model.Email">
+    </div>
+     
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="market">Markets</label>
+        <select multiple class="form-control" name="market" id="market">
+          <option>TH</option>
+          <option>IN</option>
+          <option>AU</option>
+        </select>
+    </div>
+    <div class="col-md-1"></div>
   </div>
-  <div class="form-group">
-    <label for="qID">Q-ID:</label>
-    <input type="text" class="form-control" id="qID" value=@Model.QID> 
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary">Save</button> 
+            <button type="submit" class="btn btn-default">Clear</button> 
+            
+
+    </div>
   </div>
- <div class="form-group">
-    <label for="email">E-Mail:</label>
-    <input type="email" class="form-control" id="email" value=@Model.Email>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>  
   </form>
-</div>
+  </div>
+

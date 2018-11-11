@@ -47,7 +47,7 @@ namespace PartnerMaintenanceApp.Controllers
                 PartnerType = PartnerType.Maintenance,
                 Name = "New Partner",
                 Email = "srihari.venk@gmail.com",
-                QID="QTC0454"
+                QID="QTC0454 111"
             };
             return View(partnerDetails);
         }
